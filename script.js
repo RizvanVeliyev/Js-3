@@ -7,13 +7,15 @@ let mark=[
 
 let model=[
     ['x5','m5','x6'],
-    ['Astra','Vectra'],
-    ['Camry','carolla'],
-    ['190','s-class']
+    ['Astra','Vectra','corsa'],
+    ['Camry','Prius','carolla'],
+    ['190','s-class','amg']
 ]
 
 let marka_s=document.getElementById('marka');
 let model_s=document.getElementById('model');
+let image=document.getElementById("image")
+
 
 function markaSelect(){
     let data=`<option value="" disabled selected>Marka select</option>`;
@@ -35,3 +37,10 @@ function modelSelect(){
     model_s.innerHTML=data;
 
 }
+
+function display() {
+    let mark_name = marka_s.options[marka_s.selectedIndex].text;
+    let model_name = model_s.options[model_s.selectedIndex].text;
+    let data = `<img style="background-size:cover;"  src="/JS-3/cars_images/${mark_name}/${model_name}.jpg" alt="${mark_name}_${model_name}">`;
+    image.innerHTML = data;
+  }
